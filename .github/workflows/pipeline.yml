@@ -24,6 +24,10 @@ jobs:
         run: npm run build
       - name: test
         run: npm run test
+      - name: commit messages
+        env:
+          COMMIT_MESSAGES: ${{ toJson(github.event.commits.*.message) }}
+        run: echo "$COMMIT_MESSAGES"
 
   test:
     timeout-minutes: 60
