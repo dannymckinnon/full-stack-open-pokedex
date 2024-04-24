@@ -47,6 +47,7 @@ jobs:
           retention-days: 30
 
   deploy:
+    if: ${{ github.event_name == 'push' }}
     runs-on: ubuntu-20.04
     needs: [build, test]
     steps:
