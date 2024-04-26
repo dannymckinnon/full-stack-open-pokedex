@@ -11,7 +11,8 @@ app.get('/version', (req, res) => {
 })
 
 app.get('/health', (req, res) => {
-  res.send('ok')
+  // res.send('ok')
+  res.status(500).send('Internal Server Error')
 })
 
 app.listen(PORT, () => {
